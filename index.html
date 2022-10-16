@@ -1,0 +1,1058 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <link href='http://fonts.googleapis.com/css?family=Coming+Soon' rel='stylesheet' type='text/css' />
+    <title>MIGASAMIGAS</title>
+    <!-- Hola Paquito <3 -->
+</head>
+<a name="home"></a>
+
+<body class="bg-fondo">
+    <div id="main_wraper">
+        <header>
+            <div id="main_tittle" class="float-left correct">
+                <img src="img/logo.jpg" alt="a" class="logopr">
+            </div>
+            <nav class="float-left posct">
+                <ul>
+                    <li class="fuentetext postext  hg-lim ">
+                        <p class="prd-bttn bg-gray mx"><span class="tm45 crrctps">Productos </span> <img
+                                src="img/desplay producto.jpg" class="float-right fotop" alt="a"></p>
+                        <ul>
+                            <li><a href='#panaderia'>Panadería</a></li>
+                            <li><a href="#empanadas">Empanadas</a></li>
+                            <li><a href="#pasteleria">Pastelería-Bollería</a></li>
+                        </ul>
+                    </li>
+                    <li class="spc float-right">
+                        <div id="search2" class="float-left">
+                            <p><input type="text" id="textbusc" placeholder="¿Que buscas?..."></p>
+                        </div>
+                        <form action="" id="url" class="float-right text-white p2">
+                            <input type="submit" id="bt" />
+                        </form>
+                        <script>//Busqueda funcional
+                            var boton = document.getElementById('bt');
+                            boton.addEventListener("click", function (evento) {
+                                var texto = document.getElementById('textbusc').value;
+                                const enlaces = ['panaderia', 'pasteleria', 'empanadas'];
+                                const subenlaces1 = ['pastas', 'rellenos','donuts'];
+                                const subenlaces2 = ['sin gluten', 'panes planos', 'pastas planas', 'horneados duraderos','dulces rellenos', 'productos horneados'];
+                                const subenlaces3 = ['pan de molde', 'pan sin molde', 'pan de sandwich','empanadas de champiñones','tableta de chocolate','tarta de chocolate','napolitana de chocolate'];
+                                const subenlaces4 = ['empanadas argentinas de carne','empanadas de carne molida'];
+                                const subenlaces6 = ['empanadas de espinaca a la crema'];
+                                const panaderiareal = ['pastas', 'rellenos', 'sin gluten', 'panes planos', 'pastas planas', 'horneados duraderos', 'pan de molde', 'pan sin molde', 'pan de sandwich']
+                                const panaderiavisible = ['pan de molde', 'pan sin molde', 'pastas', 'pan de sandwich'];
+                                const empanadasreal = ['empanadas de champiñones', 'empanadas de carne molida', 'empanadas argentinas de carne', 'empanadas de espinaca a la crema'];
+                                const empanadasvisible = ['empanadas de champiñones', 'empanadas de carne molida', 'empanadas argentinas de carne', 'empanadas de espinaca a la crema'];
+                                const pasteleriareal = ['donuts', 'tableta de chocolate', 'dulces rellenos', 'productos horneados', 'tarta de chocolate', 'napolitana de chocolate'];
+                                const pasteleriavisible = ['donuts', 'tableta de chocolate', 'dulces rellenos', 'productos horneados'];
+                                if (enlaces.includes(texto) || subenlaces1.includes(texto)) {
+                                    if (panaderiavisible.includes(texto) == false && panaderiareal.includes(texto)) {
+                                        document.getElementById('masproductospan').style.display = 'block';
+                                        document.getElementById('botonesprms').style.display = 'none';
+                                        document.getElementById('botonesproc').style.display = 'block';
+                                        var redireccion = document.getElementById('url');
+                                        redireccion.action = `http://127.0.0.1:5500/index.html?#${texto}`;
+                                    } else if (pasteleriavisible.includes(texto) == false && pasteleriareal.includes(texto)) {
+                                        document.getElementById('masproductosbollo').style.display = 'block';
+                                        document.getElementById('botonesbm').style.display = 'none';
+                                        document.getElementById('botonesbo').style.display = 'block';
+                                        var redireccion = document.getElementById('url');
+                                        redireccion.action = `http://127.0.0.1:5500/index.html?#${texto}`;
+                                    } else {
+                                        var redireccion = document.getElementById('url');
+                                        redireccion.action = `http://127.0.0.1:5500/index.html?#${texto}`;
+                                    }
+
+                                } else if (subenlaces2.includes(texto)) {
+                                    if (panaderiavisible.includes(texto) == false && panaderiareal.includes(texto)) {
+                                        document.getElementById('masproductospan').style.display = 'block';
+                                        document.getElementById('botonesprms').style.display = 'none';
+                                        document.getElementById('botonesproc').style.display = 'block';
+                                        var redireccion = document.getElementById('url');
+                                        var espacio = " ";
+                                        var arraytexto = texto.split(espacio);
+                                        var template = `http://127.0.0.1:5500/index.html?#`;
+                                        var texto1 = arraytexto[0];
+                                        var texto2 = arraytexto[1];
+                                        template += texto1;
+                                        template += '%20';
+                                        template += texto2;
+                                        redireccion.action = template;
+                                    } else if (pasteleriavisible.includes(texto) == false && pasteleriareal.includes(texto)) {
+                                        document.getElementById('masproductosbollo').style.display = 'block';
+                                        document.getElementById('botonesbm').style.display = 'none';
+                                        document.getElementById('botonesbo').style.display = 'block';
+                                        var redireccion = document.getElementById('url');
+                                        var espacio = " ";
+                                        var arraytexto = texto.split(espacio);
+                                        var template = `http://127.0.0.1:5500/index.html?#`;
+                                        var texto1 = arraytexto[0];
+                                        var texto2 = arraytexto[1];
+                                        template += texto1;
+                                        template += '%20';
+                                        template += texto2;
+                                        redireccion.action = template;
+                                    } else {
+                                        var redireccion = document.getElementById('url');
+                                        var espacio = " ";
+                                        var arraytexto = texto.split(espacio);
+                                        var template = `http://127.0.0.1:5500/index.html?#`;
+                                        var texto1 = arraytexto[0];
+                                        var texto2 = arraytexto[1];
+                                        template += texto1;
+                                        template += '%20';
+                                        template += texto2;
+                                        redireccion.action = template;
+                                    }
+                                } else if (subenlaces3.includes(texto)) {
+                                    if (panaderiavisible.includes(texto) == false && panaderiareal.includes(texto)) {
+                                        document.getElementById('masproductospan').style.display = 'block';
+                                        document.getElementById('botonesprms').style.display = 'none';
+                                        document.getElementById('botonesproc').style.display = 'block';
+                                        var redireccion = document.getElementById('url');
+                                        var espacio = " ";
+                                        var arraytexto = texto.split(espacio);
+                                        var template = `http://127.0.0.1:5500/index.html?#`;
+                                        var texto1 = arraytexto[0];
+                                        var texto2 = arraytexto[1];
+                                        var texto3 = arraytexto[2];
+                                        template += texto1;
+                                        template += '%20';
+                                        template += texto2;
+                                        template += '%20';
+                                        template += texto3;
+                                        redireccion.action = template;
+                                    } else if (pasteleriavisible.includes(texto) == false && pasteleriareal.includes(texto)) {
+                                        document.getElementById('masproductosbollo').style.display = 'block';
+                                        document.getElementById('botonesbm').style.display = 'none';
+                                        document.getElementById('botonesbo').style.display = 'block';
+                                        var redireccion = document.getElementById('url');
+                                        var espacio = " ";
+                                        var arraytexto = texto.split(espacio);
+                                        var template = `http://127.0.0.1:5500/index.html?#`;
+                                        var texto1 = arraytexto[0];
+                                        var texto2 = arraytexto[1];
+                                        var texto3 = arraytexto[2];
+                                        template += texto1;
+                                        template += '%20';
+                                        template += texto2;
+                                        template += '%20';
+                                        template += texto3;
+                                        redireccion.action = template;
+                                    } else {
+                                        var redireccion = document.getElementById('url');
+                                        var espacio = " ";
+                                        var arraytexto = texto.split(espacio);
+                                        var template = `http://127.0.0.1:5500/index.html?#`;
+                                        var texto1 = arraytexto[0];
+                                        var texto2 = arraytexto[1];
+                                        var texto3 = arraytexto[2];
+                                        template += texto1;
+                                        template += '%20';
+                                        template += texto2;
+                                        template += '%20';
+                                        template += texto3;
+                                        redireccion.action = template;
+                                    }
+                                } else if (subenlaces4.includes(texto)) {
+                                    var redireccion = document.getElementById('url');
+                                    var espacio = " ";
+                                    var arraytexto = texto.split(espacio);
+                                    var template = `http://127.0.0.1:5500/index.html?#`;
+                                    var texto1 = arraytexto[0];
+                                    var texto2 = arraytexto[1];
+                                    var texto3 = arraytexto[2];
+                                    var texto4 = arraytexto[3];
+                                    template += texto1;
+                                    template += '%20';
+                                    template += texto2;
+                                    template += '%20';
+                                    template += texto3;
+                                    template += '%20';
+                                    template += texto4;
+                                    redireccion.action = template;
+                                } else if (subenlaces6.includes(texto)) {
+                                    var redireccion = document.getElementById('url');
+                                    var espacio = " ";
+                                    var arraytexto = texto.split(espacio);
+                                    var template = `http://127.0.0.1:5500/index.html?#`;
+                                    var texto1 = arraytexto[0];
+                                    var texto2 = arraytexto[1];
+                                    var texto3 = arraytexto[2];
+                                    var texto4 = arraytexto[3];
+                                    var texto5 = arraytexto[4];
+                                    var texto6 = arraytexto[5];
+                                    template += texto1;
+                                    template += '%20';
+                                    template += texto2;
+                                    template += '%20';
+                                    template += texto3;
+                                    template += '%20';
+                                    template += texto4;
+                                    template += '%20';
+                                    template += texto5;
+                                    template += '%20';
+                                    template += texto6;
+                                    redireccion.action = template;
+                                } else {
+                                    alert(`No tenemos "${texto}" pero disponemos:
+        panaderia:
+            -pan de molde
+            -pan sin molde
+            -pastas
+            -pan de sandwich
+            -sin gluten
+            -panes planos/pastas planas
+            -rellenos
+            -horneados duraderos
+        empanadas:
+            -empanadas de champiñones
+            -empanadas de carne molida
+            -empanadas argentinas de carne
+            -empanadas de espinaca a la crema
+        pasteleria:
+            -donuts
+            -tableta de chocolate
+            -dulces rellenos
+            -productos horneados
+            -tarta de chocolate
+            -napolitana de chocolate
+                                    `);
+                                }
+                            })
+                        </script>
+                    </li>
+
+                </ul>
+            </nav>
+            <div class="contenlogo float-right">
+                <img src="img/traductor.jpg" alt="a" class="logotm">
+                <img src="img/carrito.jpg" alt="a" class="logotm">
+                <img src="img/logocontacto.jpg" onclick="window.modal.showModal();" alt="a" class="logotm">
+            </div>
+            <div class="cb"></div>
+        </header>
+
+
+        <dialog id="modal">
+            <div id="headmodal">
+                <img id="logomodal" src="img/logo.jpg" alt="a" class="float-left">
+                <div id="cft" class="float-left">
+                    <div>
+                        <div class="float-left"><img class="logomd" src="img/correo.jpg" alt="a"><strong class="sp">MigasAmigas@gmail.com</strong></div>
+                        <div class="float-right sp3"><img class="logomd" src="img/tweet.jpg" alt="a"><strong class="sp">@_.MigasAmigas._</strong></div>
+                    </div>
+                    <div class="float-left st2"><img class="logomd" src="img/face.jpg" alt="a"><strong class="sp">facebook.com/MigasAmigas</strong></div>
+                </div>
+                <img id="xmodal" onclick="window.modal.close();" src="img/equisd.png" alt="a" class="float-right">
+                
+            </div>
+            <div>
+                <div id="textmodal">
+                    <input id="tex" type="text" value="¿Cuál es tu nombre?" class="float-left">
+                    <input id="tex" type="text" value="¿Cuál es tu correo electronico?" class="float-right">
+                    <div class="cb"></div>
+                </div>
+                <div id="text2modal">
+                    <div class="float-left">
+                        <div id="submodal">
+                            <input id="tex" type="text" value="¿Por qué nos contactas?" class="float-left">
+                            <button id="modalb" class="float-right">Enviar</button>
+                        </div>
+                        <div id="razon"><textarea id="txarea" cols="47" rows="7">Os contacto porque...</textarea></div>
+                    </div>
+                    <img id="maps" src="img/maps.jpg" alt="a" class="float-right">
+                    <div class="cb"></div>
+                </div>
+            </div>
+            <div class="cb"></div>
+            
+        </dialog>
+
+
+        <div class="contenedor">
+            <div id="banner">
+            </div>
+            <div id="panaderia">
+                <a name="panaderia"></a>
+                <div class="fdiv"></div>
+                <div id="transci">
+                    <img src="img/panaderia.jpg" class="float-left" id="transcimg" alt="a">
+                    <a href='#home'><img src="img/homr.jpg" class="pr1 float-right logotm" alt="a"></a>
+                </div>
+                <div id="texttransci">
+                    <div id="texttranscidiv" class="float-left">
+                        <p>La panaderia de Migas Amigas sigue siendo igual que hace 2 décadas, siendo fieles a mantener
+                            la misma calidad en sus productos, dia a dia.</p>
+                    </div>
+                    <div id="textcarrusel" class="float-right">
+                        <div class="container--head">
+                            <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+                                <div class="carousel-tooltip">
+                                    <div class="caraousel-tooltip-item active" data-index="0">
+                                    </div>
+                                    <div class="caraousel-tooltip-item" data-index="1">
+                                    </div>
+                                    <div class="caraousel-tooltip-item" data-index="2">
+                                    </div>
+                                </div>
+
+                                <!-- Indicators -->
+                                <ol class="carousel-indicators">
+                                    <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+                                    <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+                                    <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+                                </ol>
+
+                                <!-- Wrapper for slides -->
+                                <div class="carousel-inner">
+                                    <div class="item active">
+                                        <img src="img/panaderia1.jpg" alt="..." id="crrsimg">
+                                        <div class="carousel-caption">
+                                        </div>
+                                    </div>
+                                    <div class="item">
+                                        <img src="img/panaderia2.jpg" alt="..." id="crrsimg">
+                                        <div class="carousel-caption">
+                                        </div>
+                                    </div>
+                                    <div class="item">
+                                        <img src="img/panaderia3.jpg" alt="..." id="crrsimg">
+                                        <div class="carousel-caption">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Fontawesome -->
+                            <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css"
+                                rel="stylesheet">
+                            <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css"
+                                rel="stylesheet">
+                            <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+                            <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+                        </div>
+                    </div>
+                </div>
+                <div id="texttransciproducto">
+                    Productos
+                </div>
+                <div id="productos">
+                    <div id="separadorprdct">
+                        <div id="cnj">
+                            <div id="producto" class="float-left">
+                                <a name="pan de molde"></a>
+                                <img src="img/pan producto.png" alt="a">
+                                <div id="contentprd">
+                                    <div id="tit">
+                                        <strong>PAN DE MOLDE</strong>
+                                    </div>
+                                    <div id="textprdct">
+                                        División eficiente y al gramo de las masas más variadas y depósito directo en
+                                        grupos de moldes. Para los más distintos tipos de pan, p. ej., pan integral de
+                                        espelta, pan de centeno, pan de frutas, pan sin gluten y muchos más. El
+                                        principio de división de masas completamente libre de aceite y harina y la
+                                        exacta precisión en el peso garantizan una máxima rentabilidad.
+                                    </div>
+
+                                </div>
+                                <div class="btcm float-right">
+                                    <button>Comprar</button>
+                                </div>
+                                <div class="cb"></div>
+                            </div>
+                            <div id="producto" class="float-right">
+                                <a name="pan sin molde"></a>
+                                <img src="img/pan producto 2.jpg" alt="a">
+                                <div id="contentprd">
+                                    <div id="tit">
+                                        <strong>PAN SIN MOLDE</strong>
+                                    </div>
+                                    <div id="textprdct">
+                                        Con tan solo un divisor de masa podrá dividir con una alta precisión y sin
+                                        aceite ni harina todo el surtido de su panadería: desde pan de trigo sin molde
+                                        hasta pan integral de centeno, trigo o espelta, inclusive masas sin gluten.
+                                    </div>
+                                </div>
+                                <div class="btcm float-right">
+                                    <button>Comprar</button>
+                                </div>
+                                <div class="cb"></div>
+                            </div>
+
+                            <div class="cb"></div>
+                        </div>
+                        <div id="cnj">
+                            <div id="producto" class="float-left">
+                                <a name="pastas"></a>
+                                <img src="img/pan producto 3.jpg" alt="a">
+                                <div id="contentprd">
+                                    <div id="tit">
+                                        <strong>PASTAS</strong>
+                                    </div>
+                                    <div id="textprdct">
+                                        Producción de pastas de todo tipo: desde productos con formas redondas, como
+                                        Vinschgauer, hasta alargados, como panecillos de centeno. División, moldeado y
+                                        depósito de masas blandas/prefermentadas en un solo paso de proceso.
+                                    </div>
+
+                                </div>
+                                <div class="btcm float-right">
+                                    <button>Comprar</button>
+                                </div>
+                                <div class="cb"></div>
+                            </div>
+                            <div id="producto" class="float-right">
+                                <a name="pan de sandwich"></a>
+                                <img src="img/pan producto 4.png" alt="a">
+                                <div id="contentprd">
+                                    <div id="tit">
+                                        <strong>PAN DE SÁNDWICH</strong>
+                                    </div>
+                                    <div id="textprdct">
+                                        División de masa de alta precisión y sin aceite para la producción de pan
+                                        tostado, pan de sándwich, etc. La excelente precisión en el peso garantiza una
+                                        máxima rentabilidad en la división de masas para pan tostado. El resultado son
+                                        ventajas económicas significativas, especialmente en aquellas empresas que
+                                        producen las 24 horas los 7 días de la semana.
+                                    </div>
+
+                                </div>
+                                <div class="btcm float-right">
+                                    <button>Comprar</button>
+                                </div>
+                                <div class="cb"></div>
+                            </div>
+
+                            <div class="cb"></div>
+                        </div>
+                        <div id="masproductospan" style="display: none;">
+                            <div id="cnj">
+                                <div id="producto" class="float-left">
+                                    <a name="sin gluten"></a>
+                                    <img src="img/pan producto 5.jpg" alt="a">
+                                    <div id="contentprd">
+                                        <div id="tit">
+                                            <strong>PRODUCTOS DE PANADERÍA SIN GLUTEN</strong>
+                                        </div>
+                                        <div id="textprdct">
+                                            División y procesamiento de masas sin gluten y masas de todo tipo, ya sea
+                                            pan, pastas o repostería. El principio de porcionado sin aceite y el diseño
+                                            higiénico de nuestras soluciones garantizan la máxima seguridad del proceso
+                                            y de los productos.
+                                        </div>
+
+                                    </div>
+                                    <div class="btcm float-right">
+                                        <button>Comprar</button>
+                                    </div>
+                                    <div class="cb"></div>
+                                </div>
+                                <div id="producto" class="float-right">
+                                    <a name="panes planos"></a>
+                                    <a name="pastas planas"></a>
+                                    <img src="img/pan6.jpg" alt="a">
+                                    <div id="contentprd">
+                                        <div id="tit">
+                                            <strong>PANES PLANOS/PASTAS PLANAS</strong>
+                                        </div>
+                                        <div id="textprdct">
+                                            División de masa al gramo de bolas de pizza, naan, pita, crackers y más. Con
+                                            nuestros versátiles sistemas de división de masas de uso universal podrá
+                                            dividir masas de las más distinta consistencia y fluidez de forma eficiente
+                                            y manteniendo la calidad de sus productos.
+                                        </div>
+
+                                    </div>
+                                    <div class="btcm float-right">
+                                        <button>Comprar</button>
+                                    </div>
+                                    <div class="cb"></div>
+                                </div>
+
+                                <div class="cb"></div>
+                            </div>
+                            <div id="cnj">
+                                <div id="producto" class="float-left">
+                                    <a name="rellenos"></a>
+                                    <img src="img/pan7.jpg" alt="a">
+                                    <div id="contentprd">
+                                        <div id="tit">
+                                            <strong>RELLENOS</strong>
+                                        </div>
+                                        <div id="textprdct">
+                                            Nuestros sistemas dosifican los más distintos rellenos en varias pistas y al
+                                            gramo. Ya sean masas con trozos, sólidas, pastosas, frías o calientes. Desde
+                                            rellenos de repostería para bollos o cruasanes hasta rellenos de verdura o
+                                            carne para empanadas, pasta rellena y pelmeni - Garantía de precisión y
+                                            variedad para sus especialidades rellenas.
+                                        </div>
+
+                                    </div>
+                                    <div class="btcm float-right">
+                                        <button>Comprar</button>
+                                    </div>
+                                    <div class="cb"></div>
+                                </div>
+                                <div id="producto" class="float-right">
+                                    <a name="horneados duraderos"></a>
+                                    <img src="img/pan8.png" alt="a">
+                                    <div id="contentprd">
+                                        <div id="tit">
+                                            <strong>PRODUCTOS HORNEADOS DURADEROS</strong>
+                                        </div>
+                                        <div id="textprdct">
+                                            Tanto masas con consistencias fluidas o firmes como masas con suplementos,
+                                            p. ej., pasas: cree sus productos de repostería con los más variados diseños
+                                            y una máxima flexibilidad en las formas. Galletas, muffins, bizcochos,
+                                            bolitas de queso quark, brioche, trenzas de levadura, stollen, cuernos de
+                                            almendras, barritas energéticas o de cereales: damos forma a sus ideas de
+                                            productos dulces.
+                                        </div>
+
+                                    </div>
+                                    <div class="btcm float-right">
+                                        <button>Comprar</button>
+                                    </div>
+                                    <div class="cb"></div>
+                                </div>
+
+                                <div class="cb"></div>
+                            </div>
+                            <div id="cnj">
+                                <div id="producto" class="float-left">
+                                    <img src="img/pan producto 3.jpg" alt="a">
+                                    <div id="contentprd">
+                                        <div id="tit">
+                                            <strong>PASTAS</strong>
+                                        </div>
+                                        <div id="textprdct">
+                                            Producción de pastas de todo tipo: desde productos con formas redondas, como
+                                            Vinschgauer, hasta alargados, como panecillos de centeno. División, moldeado
+                                            y
+                                            depósito de masas blandas/prefermentadas en un solo paso de proceso.
+                                        </div>
+
+                                    </div>
+                                    <div class="btcm float-right">
+                                        <button>Comprar</button>
+                                    </div>
+                                    <div class="cb"></div>
+                                </div>
+                                <div id="producto" class="float-right">
+                                    <img src="img/pan producto 4.png" alt="a">
+                                    <div id="contentprd">
+                                        <div id="tit">
+                                            <strong>PAN DE SÁNDWICH</strong>
+                                        </div>
+                                        <div id="textprdct">
+                                            División de masa de alta precisión y sin aceite para la producción de pan
+                                            tostado, pan de sándwich, etc. La excelente precisión en el peso garantiza
+                                            una
+                                            máxima rentabilidad en la división de masas para pan tostado. El resultado
+                                            son
+                                            ventajas económicas significativas, especialmente en aquellas empresas que
+                                            producen las 24 horas los 7 días de la semana.
+                                        </div>
+
+                                    </div>
+                                    <div class="btcm float-right">
+                                        <button>Comprar</button>
+                                    </div>
+                                    <div class="cb"></div>
+                                </div>
+
+                                <div class="cb"></div>
+                            </div>
+                        </div>
+                        <div id="botonesproc" style="display: none;" class="centro">
+                            <button id="proc" type="button" onclick="ocultar()"><img src="img/menos.jpg"
+                                    alt=""></button>
+                        </div>
+                        <div id="botonesprms" class="centro">
+                            <button id="prms" type="button" onclick="mostrar()"><img src="img/mas.jpg" alt=""></button>
+                        </div>
+
+
+                        <script>
+                            //Mostrar contenido 
+                            function ocultar() {
+                                document.getElementById('masproductospan').style.display = 'none';
+                                document.getElementById('botonesproc').style.display = 'none';
+                                document.getElementById('botonesprms').style.display = 'block';
+                            }
+                            function mostrar() {
+                                document.getElementById('masproductospan').style.display = 'block';
+                                document.getElementById('botonesprms').style.display = 'none';
+                                document.getElementById('botonesproc').style.display = 'block';
+                            }
+                        </script>
+                    </div>
+                </div>
+
+
+
+
+                <div class="cb"></div>
+            </div>
+            <div id="panaderia">
+                <a name="empanadas"></a>
+                <div class="fdiv"></div>
+                <div id="transci">
+                    <img src="img/empanadas.jpg" class="float-left" id="transcimg" alt="a">
+                    <a href='#home'><img src="img/homr.jpg" class="pr1 float-right logotm" alt="a"></a>
+                </div>
+                <div id="texttransci">
+                    <div id="texttranscidiv" class="float-left">
+                        <p>¿Para qué la dieta si existe el ejercicio? Bien sabes que tratar de dejar de comer de
+                            nuestras empanadas te supondrá un suplicio.</p>
+                    </div>
+                    <div id="textcarrusel" class="float-right">
+                        <div class="container--head">
+                            <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+                                <div class="carousel-tooltip">
+                                    <div class="caraousel-tooltip-item active" data-index="0">
+                                    </div>
+                                    <div class="caraousel-tooltip-item" data-index="1">
+                                    </div>
+                                    <div class="caraousel-tooltip-item" data-index="2">
+                                    </div>
+                                </div>
+
+                                <!-- Indicators -->
+                                <ol class="carousel-indicators">
+                                    <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+                                    <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+                                    <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+                                </ol>
+
+                                <!-- Wrapper for slides -->
+                                <div class="carousel-inner">
+                                    <div class="item active">
+                                        <img src="img/empanadascarrusel1.jpg" alt="..." id="crrsimg">
+                                        <div class="carousel-caption">
+                                        </div>
+                                    </div>
+                                    <div class="item">
+                                        <img src="img/empanadascarrusel2.jpg" alt="..." id="crrsimg">
+                                        <div class="carousel-caption">
+                                        </div>
+                                    </div>
+                                    <div class="item">
+                                        <img src="img/empanadascarrusel3.jpg" alt="..." id="crrsimg">
+                                        <div class="carousel-caption">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Fontawesome -->
+                            <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css"
+                                rel="stylesheet">
+                            <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css"
+                                rel="stylesheet">
+                            <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+                            <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+                        </div>
+                    </div>
+                </div>
+                <div id="texttransciproducto">
+                    Productos
+                </div>
+                <div id="productos">
+                    <div id="separadorprdct">
+                        <div id="cnj">
+                            <div id="producto" class="float-left">
+                                <a name="empanadas de champiñones"></a>
+                                <img src="img/empanada champiñones.jpg" alt="a">
+                                <div id="contentprd">
+                                    <div id="tit">
+                                        <strong>EMPANADAS DE CHAMPIÑONES</strong>
+                                    </div>
+                                    <div id="textprdct">
+                                        Ingredientes:
+                                        1 diente de ajo picado,
+                                        2 yemas de huevo,
+                                        20 hojas de masa para empanada,
+                                        3 tazas de champiñones fileteados,
+                                        1 taza de cebolla en tiras delgadas,
+                                        2 cucharadas de epazote fresco picado,
+                                        1 chile de árbol en rebanadas delgadas sin semilla,
+                                        2 cucharadas de aceite.
+                                    </div>
+
+                                </div>
+                                <div class="btcm float-right">
+                                    <button>Comprar</button>
+                                </div>
+                                <div class="cb"></div>
+                            </div>
+                            <div id="producto" class="float-right">
+                                <a name="empanadas de carne molida"></a>
+                                <img src="img/empanada carne.jpg" alt="a">
+                                <div id="contentprd">
+                                    <div id="tit">
+                                        <strong>EMPANADAS DE CARNE MOLIDA</strong>
+                                    </div>
+                                    <div id="textprdct">
+                                        Ingredientes: <br>
+                                        400 g de carne molida,
+                                        1 cucharada de aceite,
+                                        1 taza de cebolla picada,
+                                        1 diente de ajo picado,
+                                        3 jitomates picados,
+                                        1 cucharadita de comino,
+                                        6 aceitunas picadas,
+                                        de taza de pasitas,
+                                        10 hojas de masa para empanada.
+                                    </div>
+                                </div>
+                                <div class="btcm float-right">
+                                    <button>Comprar</button>
+                                </div>
+                                <div class="cb"></div>
+                            </div>
+
+                            <div class="cb"></div>
+                        </div>
+                        <div id="cnj">
+                            <div id="producto" class="float-left">
+                                <a name="empanadas argentinas de carne"></a>
+                                <img src="img/empanada argentina.jpg" alt="a">
+                                <div id="contentprd">
+                                    <div id="tit">
+                                        <strong>EMPANADAS ARGENTINAS DE CARNE</strong>
+                                    </div>
+                                    <div id="textprdct">
+                                        Ingredientes: <br>
+                                        4 cucharadas de aceite,
+                                        1 cucharada de azúcar,
+                                        1 cucharada de pimientón,
+                                        1/2 taza de puré de tomate,
+                                        500 g de carne molida o picada muy finamente,
+                                        1 cebolla picada finamente,
+                                        1/2 taza de aceitunas picadas,
+                                        1/4 taza de perejil picado.
+                                    </div>
+
+                                </div>
+                                <div class="btcm float-right">
+                                    <button>Comprar</button>
+                                </div>
+                                <div class="cb"></div>
+                            </div>
+                            <div id="producto" class="float-right">
+                                <a name="empanadas de espinaca a la crema"></a>
+                                <img src="img/empanada espinaca.jpg" alt="a">
+                                <div id="contentprd">
+                                    <div id="tit">
+                                        <strong>EMPANADAS DE ESPINACA A LA CREMA</strong>
+                                    </div>
+                                    <div id="textprdct">
+                                        Ingredientes: <br>
+                                        2 yemas de huevoc,
+                                        2 tazas de espinacas cocidas,
+                                        1 taza de cebolla picada,
+                                        1 pizca de nuezmoscada,
+                                        2 cucharadas de mantequilla,
+                                        4 cucharadas de crema,
+                                        10 hojas de masa para empanada,
+                                        1 taza de queso manchego rallado,
+                                        1 taza de granos de elote amarillo.
+                                    </div>
+
+                                </div>
+                                <div class="btcm float-right">
+                                    <button>Comprar</button>
+                                </div>
+                                <div class="cb"></div>
+                            </div>
+
+                            <div class="cb"></div>
+                        </div>
+                        <div id="masproductosemp" style="display: none;">
+
+                        </div>
+                        <div id="botonesempo" style="display: none;" class="centro">
+                            <button id="proc" type="button" onclick="ocultaremp()"><img src="img/menos.jpg"
+                                    alt=""></button>
+                        </div>
+                        <div id="botonesempm" style="display: none;" class="centro">
+                            <button id="prms" type="button" onclick="mostraremp()"><img src="img/mas.jpg"
+                                    alt=""></button>
+                        </div>
+                        <script>
+                            //Mostrar contenido 
+                            function ocultaremp() {
+                                document.getElementById('masproductosemp').style.display = 'none';
+                                document.getElementById('botonesempo').style.display = 'none';
+                                document.getElementById('botonesempm').style.display = 'block';
+                            }
+                            function mostraremp() {
+                                document.getElementById('masproductosemp').style.display = 'block';
+                                document.getElementById('botonesempm').style.display = 'none';
+                                document.getElementById('botonesempo').style.display = 'block';
+                            }
+                        </script>
+                    </div>
+                </div>
+                <div class="cb"></div>
+            </div>
+            <div id="panaderia">
+                <a name="pasteleria"></a>
+                <div class="fdiv"></div>
+                <div id="transci">
+                    <img src="img/bolleria.jpg" class="float-left" id="transcimg" alt="a">
+                    <a href='#home'><img src="img/homr.jpg" class="pr1 float-right logotm" alt="a"></a>
+                </div>
+                <div id="texttransci">
+                    <div id="texttranscidiv" class="float-left">
+                        <p>No puedes comprar la felicidad pero... <strong>¡Puedes comprar un pastel de chocolate y es
+                                casi lo mismo</strong>!</p>
+                    </div>
+                    <div id="textcarrusel" class="float-right">
+                        <div class="container--head">
+                            <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+                                <div class="carousel-tooltip">
+                                    <div class="caraousel-tooltip-item active" data-index="0">
+                                    </div>
+                                    <div class="caraousel-tooltip-item" data-index="1">
+                                    </div>
+                                    <div class="caraousel-tooltip-item" data-index="2">
+                                    </div>
+                                </div>
+
+                                <!-- Indicators -->
+                                <ol class="carousel-indicators">
+                                    <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+                                    <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+                                    <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+                                </ol>
+
+                                <!-- Wrapper for slides -->
+                                <div class="carousel-inner">
+                                    <div class="item active">
+                                        <img src="img/bolleriacarrusel1.jpg" alt="..." id="crrsimg">
+                                        <div class="carousel-caption">
+                                        </div>
+                                    </div>
+                                    <div class="item">
+                                        <img src="img/bolleriacarrusel2.jpg" alt="..." id="crrsimg">
+                                        <div class="carousel-caption">
+                                        </div>
+                                    </div>
+                                    <div class="item">
+                                        <img src="img/bolleriacarrusel3.jpg" alt="..." id="crrsimg">
+                                        <div class="carousel-caption">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Fontawesome -->
+                            <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css"
+                                rel="stylesheet">
+                            <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css"
+                                rel="stylesheet">
+                            <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+                            <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+                        </div>
+                    </div>
+                </div>
+                <div id="texttransciproducto">
+                    Productos
+                </div>
+                <div id="productos">
+                    <div id="separadorprdct">
+                        <div id="cnj">
+                            <div id="producto" class="float-left">
+                                <a name="donuts"></a>
+                                <img src="img/bolleria1.jpg" alt="a">
+                                <div id="contentprd">
+                                    <div id="tit">
+                                        <strong>DONUTS</strong>
+                                    </div>
+                                    <div id="textprdct">
+                                        Sabores: <br>
+                                        - Fresa - Mango<br>
+                                        - Uva - Chocolate <br>
+                                        - Piña - Unicornio
+                                    </div>
+
+                                </div>
+                                <div class="btcm float-right">
+                                    <button>Comprar</button>
+                                </div>
+                                <div class="cb"></div>
+                            </div>
+                            <div id="producto" class="float-right">
+                                <a name="tableta de chocolate"></a>
+                                <img src="img/tabla.jpg" alt="a">
+                                <div id="contentprd">
+                                    <div id="tit">
+                                        <strong>TABLETA DE CHOCOLATE</strong>
+                                    </div>
+                                    <div id="textprdct">
+                                        Ingredientes: <br>
+                                        110 gramos de manteca de cacao de grado alimentario o pasta de cacao.
+                                        2 gramos de manteca de cacao rallada finamente.
+                                        70 gramos de cacao en polvo.
+                                        20 gramos de azúcar de coco o el edulcorante que prefieras. La miel cruda
+                                        también da buenos resultados.
+                                        ½ cucharadita de vainilla en polvo o una cucharadita de extracto de vainilla.
+                                        Una pizca de sal gris o del Himalaya.
+                                    </div>
+                                </div>
+                                <div class="btcm float-right">
+                                    <button>Comprar</button>
+                                </div>
+                                <div class="cb"></div>
+                            </div>
+
+                            <div class="cb"></div>
+                        </div>
+                        <div id="cnj">
+                            <div id="producto" class="float-left">
+                                <a name="dulces rellenos"></a>
+                                <img src="img/pan7.jpg" alt="a">
+                                <div id="contentprd">
+                                    <div id="tit">
+                                        <strong>DULCES RELLENOS</strong>
+                                    </div>
+                                    <div id="textprdct">
+                                        Nuestros sistemas dosifican los más distintos rellenos en varias pistas y al
+                                        gramo. Ya sean masas con trozos, sólidas, pastosas, frías o calientes. Desde
+                                        rellenos de repostería para bollos o cruasanes hasta rellenos de verdura o carne
+                                        para empanadas, pasta rellena y pelmeni - Garantía de precisión y variedad para
+                                        sus especialidades rellenas.
+                                    </div>
+
+                                </div>
+                                <div class="btcm float-right">
+                                    <button>Comprar</button>
+                                </div>
+                                <div class="cb"></div>
+                            </div>
+                            <div id="producto" class="float-right">
+                                <a name="productos horneados"></a>
+                                <img src="img/pan8.png" alt="a">
+                                <div id="contentprd">
+                                    <div id="tit">
+                                        <strong>PRODUCTOS HORNEADOS</strong>
+                                    </div>
+                                    <div id="textprdct">
+                                        Tanto masas con consistencias fluidas o firmes como masas con suplementos, p.
+                                        ej., pasas: cree sus productos de repostería con los más variados diseños y una
+                                        máxima flexibilidad en las formas. Galletas, muffins, bizcochos, bolitas de
+                                        queso quark, brioche, trenzas de levadura, stollen, cuernos de almendras,
+                                        barritas energéticas o de cereales: damos forma a sus ideas de productos dulces.
+                                    </div>
+                                </div>
+                                <div class="btcm float-right">
+                                    <button>Comprar</button>
+                                </div>
+                                <div class="cb"></div>
+                            </div>
+
+                            <div class="cb"></div>
+                        </div>
+                        <div id="masproductosbollo" style="display: none;">
+                            <div id="cnj">
+                                <div id="producto" class="float-left">
+                                    <a name="tarta de chocolate"></a>
+                                    <img src="img/tart.jpg" alt="a">
+                                    <div id="contentprd">
+                                        <div id="tit">
+                                            <strong>TARTA DE CHOCOLATE</strong>
+                                        </div>
+                                        <div id="textprdct">
+                                            Ingredientes: <br>
+                                            175 g de harina,
+                                            2 huevos,
+                                            1 yogur natural (sin azúcar),
+                                            100 g de azúcar,
+                                            100 ml de aceite de girasol,
+                                            40 g de cacao 100% puro en polvo,
+                                            ½ sobre de levadura,
+                                            1 chorrito de leche,
+                                            1 cucharadita de esencia de vainilla,
+                                            1 pizca de sal.
+                                        </div>
+
+                                    </div>
+                                    <div class="btcm float-right">
+                                        <button>Comprar</button>
+                                    </div>
+                                    <div class="cb"></div>
+                                </div>
+                                <div id="producto" class="float-right">
+                                    <a name="napolitana de chocolate"></a>
+                                    <img src="img/napo.jpeg" alt="a">
+                                    <div id="contentprd">
+                                        <div id="tit">
+                                            <strong>NAPOLITANA DE CHOCOLATE</strong>
+                                        </div>
+                                        <div id="textprdct">
+                                            División eficiente y al gramo de las masas más variadas y depósito directo
+                                            en grupos de moldes. Para los más distintos tipos de pan, p. ej., pan
+                                            integral de espelta, pan de centeno, pan de frutas, pan sin gluten y muchos
+                                            más. El principio de división de masas completamente libre de aceite y
+                                            harina y la exacta precisión en el peso garantizan una máxima rentabilidad.
+                                        </div>
+
+                                    </div>
+                                    <div class="btcm float-right">
+                                        <button>Comprar</button>
+                                    </div>
+                                    <div class="cb"></div>
+                                </div>
+
+                                <div class="cb"></div>
+                            </div>
+                        </div>
+                        <div id="botonesbo" style="display: none;" class="centro">
+                            <button id="proc" type="button" onclick="ocultarb()"><img src="img/menos.jpg"
+                                    alt=""></button>
+                        </div>
+                        <div id="botonesbm" class="centro">
+                            <button id="prms" type="button" onclick="mostrarb()"><img src="img/mas.jpg" alt=""></button>
+                        </div>
+
+
+                        <script>
+                            //Mostrar contenido 
+                            function ocultarb() {
+                                document.getElementById('masproductosbollo').style.display = 'none';
+                                document.getElementById('botonesbo').style.display = 'none';
+                                document.getElementById('botonesbm').style.display = 'block';
+                            }
+                            function mostrarb() {
+                                document.getElementById('masproductosbollo').style.display = 'block';
+                                document.getElementById('botonesbm').style.display = 'none';
+                                document.getElementById('botonesbo').style.display = 'block';
+                            }
+                        </script>
+                    </div>
+                </div>
+
+
+
+
+                <div class="cb"></div>
+            </div>
+        </div>
+
+        <footer>
+            © STROWBLACK. ALL RIGTH RESERVED
+        </footer>
+    </div>
+</body>
+
+</html>

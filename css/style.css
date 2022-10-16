@@ -1,0 +1,389 @@
+body {
+    margin: 0;
+}
+header{
+    background-color: black;
+    height: 192px;
+}
+footer{
+    background-color: black;
+    color: white;
+    font-family: 'Inter';
+    font-size: 25px;
+    text-align: center;
+}
+a{
+    text-decoration: none;
+}
+a:-webkit-any-link {
+    color: black;
+    cursor: pointer;
+    text-decoration: none;
+}
+#productos{
+    background-color:#343434;
+}
+#separadorprdct{
+    padding: 50px 5% 0 5%;
+}
+#textprdct{
+    height: 120px;
+}
+
+#botonesproc{
+    width: 100%;
+}
+#botonesproc button{
+    border: none;
+}
+#botonesproc img{
+    height: 100px;
+}
+#botonesprms{
+    width: 100%;
+}
+#botonesprms img{
+    height: 100px;
+}
+#botonesprms button{
+    border: none;
+}
+
+
+#botonesempo{
+    width: 100%;
+}
+#botonesempo button{
+    border: none;
+}
+#botonesempo img{
+    height: 100px;
+}
+#botonesempm{
+    width: 100%;
+}
+#botonesempm img{
+    height: 100px;
+}
+#botonesempm button{
+    border: none;
+}
+
+#botonesbo{
+    width: 100%;
+}
+#botonesbo button{
+    border: none;
+}
+#botonesbo img{
+    height: 100px;
+}
+#botonesbm{
+    width: 100%;
+}
+#botonesbm img{
+    height: 100px;
+}
+#botonesbm button{
+    border: none;
+}
+
+#proc{
+    background-color:#343434;
+}
+
+
+#prms{
+    background-color:#343434;
+}
+.centro{
+    text-align: center;
+}
+#producto{
+    width: 45%;  
+    background-color: #D9D9D9;
+}
+#producto img{
+    width: 100%;
+    height: 250px;
+}
+#cnj{
+    padding-bottom: 50px;
+}
+#contentprd{
+    padding: 15px 15px 15px 15px;
+    color: black;
+    font-size: 15px;
+    font-family: 'Inria Serif';
+    background-color: #D9D9D9;
+}
+#texttransciproducto{
+    background-color: black;
+    font-size: 38px;
+    font-family: 'Coming Soon';
+    text-align: center;
+    color: white;
+}
+#texttransci{
+    height: 350px;
+}
+#crrsimg{
+    height: 280px;
+    width: 520px;
+}
+#url{
+    height: 60px;
+    background-color: #929292;
+    color: black;
+    font-size: 38px;
+    font-family: 'Coming Soon';
+}
+.btcm button{
+    background-color: #83CD60;
+    border: 0px;
+    width: 150px;
+}
+#banner{
+    width: 100%;
+    height: 420px;
+    background-position: -2px;
+    background-repeat: no-repeat;
+    background-size: 101%;
+    background-image: url(../img/solucion.jpg);
+}
+#mensajebanner{
+    font-size: 38px;
+    font-family: 'Coming Soon';
+    color: white;
+    background-color: black;
+    opacity: 0.5;
+    text-align: center;
+}
+#search2 ::placeholder { 
+    color: rgb(0, 0, 0); 
+}
+#search2 {
+    height: 80px;
+}
+#search2 input[type=text] {
+    font-size: 38px;
+    font-family: 'Coming Soon';
+    width: 359px;
+    height: 60px;
+    padding: 10px 0 10px 0;
+    background-color: #D9D9D9;
+}
+#main_tittle{
+    padding: 20px 0 0 40px;
+}
+#transci{
+    height: 50px;
+    background-color: black;
+}
+#transcimg{
+    height: 100px;
+}
+#panaderia{
+    background-color: white;
+}
+header nav ul, header nav li {
+    padding: 0;
+    margin: 0;
+}
+#texttransci{
+    padding-top: 50px;
+}
+#texttranscidiv{
+    padding: 55px 0 0 90px;
+    width: 50%;
+    font-size: 32px;
+    font-family: 'Coming Soon';
+}
+header nav li {
+    list-style-type: none;
+    float: left;
+    position: relative;
+}
+header nav ul li ul {
+    display: none;
+    position: absolute;
+    background-color: white;
+}
+header nav ul li:hover ul {
+    display: block;
+}
+header nav ul li ul li {
+    font-size: 38px;
+    padding: 6px;
+    width: 340px;
+    border-bottom: solid 1px gainsboro;
+}
+header nav ul li ul li:hover {
+    background-color: #D9D9D9;
+}
+.spc{
+    margin-left: 30px;
+}
+.cb{
+    clear: both;
+}
+.float-left{
+    float: left;
+}
+.float-right{
+    float: right;
+}
+.bg-black{
+    background-color: black;
+}
+.bg-fondo{
+    background-color: #AB8F8F;
+}
+.contenlogo{
+    width: 60px;
+    padding: 17px 24px 0 0;
+}
+.logotm{
+    width: 60px;
+    height: 50px;
+}
+.logopr{
+    width: 150px;
+    height: 150px;
+}
+.text-white{
+    color: white;
+}
+.bg-gray{
+    background-color: #D9D9D9;
+}
+.prd-bttn{
+    width: 359px;
+    height: 80px;
+}
+.fuentetext{
+    font-family: 'Coming Soon';
+}
+.tm45{
+    font-size: 38px;
+}
+.posct{
+    padding: 49px 0 0 60px;
+}
+.hg-lim{
+    height: 80px;
+}
+.mx{
+    width: 352px;
+    height: 60px;
+}
+.crrctps{
+    padding: 30px;
+    height: 80px;
+}
+.fotop{
+    height: 60px;
+    width: 80px;
+}
+.p1{
+    padding-top: 0.5px;
+}
+.p2{
+    padding-top: 2px;
+}
+.opn{
+    opacity: 1;
+}
+.fdiv{
+    height: 10px;
+    background-color: black;
+}
+.pr1{
+    padding-right: 15px;
+}
+.tooltip-carousel {
+    position: absolute;
+    z-index: 11;
+     border-radius: 50%;
+}  
+.caraousel-tooltip-item {
+     display: none;
+} 
+.caraousel-tooltip-item.active {
+    display: block;
+}
+dialog::backdrop {
+    background: rgba(0, 0, 0, 0.502);
+}
+
+#modal{
+    width: 900px;
+    height: 525px;
+    background-color: #949B9A;
+}
+#headmodal{
+    width: 100%;
+    height: 150px;
+}
+#logomodal{
+    height: 120px;;
+    width: 120px;
+}
+#xmodal{
+    height: 50px;
+    width: 50xp;
+}
+#tex{
+    width: 300px;
+    padding-left: 10px;
+    background-color: #00000030;
+    color: black;
+    font-family: 'Irish Grover';
+    font-size: 20px;
+}
+#textmodal{
+    width: 80%;
+    height: 35px;
+}
+#text2modal{
+    padding-top: 25px;
+}
+#razon{
+    padding-top: 63px;
+    height: 150px;
+}
+#modalb{
+    font-family: 'Irish Grover';
+    font-size: 20px;
+    width: 100px;
+    height: 34.56px;
+}
+#txarea{
+    background-color: #00000030;
+    color: black;
+    font-family: 'Irish Grover';
+    font-size: 20px;
+}
+#maps{
+    width: 320px;
+    height: 270px;
+}
+#cft{
+    padding-left: 60px;
+}
+.space{
+    padding-left: 20px;
+}
+.logomd{
+    height: 45px;
+    width: 65px;
+}
+.sp{
+    padding-left: 10px;
+}
+.sp3{
+    padding-left: 30px;
+}
+.st2{
+    padding-top: 20px;
+}
