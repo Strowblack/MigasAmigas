@@ -206,7 +206,66 @@
                                     alert("Producto no encotrado, toca nuestro logo para mirar nuestros productos.")
                                 }
                             })
-                        </script>
+                          </script>
+                          <script>
+                             var busc = document.getElementById('search2');
+                             var txt =  document.getElementById('textbusc');
+                              busc.addEventListener('keydown', function (e) { 
+                                var KeyID = e.keyCode;
+                                if (e.keyCode == 8) {
+                                txt.style.color="Black";
+                               } 
+                                if (e.key === 'Enter') {
+                                    console.log("enter")
+                                    var texto = document.getElementById('textbusc').value;
+                                    const enlaces = ['panaderia', 'pasteleria', 'empanadas'];
+                                    const subenlaces1 = ['pastas', 'rellenos', 'donuts'];
+                                    const subenlaces2 = ['sin gluten', 'panes planos', 'pastas planas', 'horneados duraderos', 'dulces rellenos', 'productos horneados'];
+                                    const subenlaces3 = ['pan de molde', 'pan sin molde', 'pan de sandwich', 'empanadas de champiñones', 'tableta de chocolate', 'tarta de chocolate', 'napolitana de chocolate'];
+                                    const subenlaces4 = ['empanadas argentinas de carne', 'empanadas de carne molida'];
+                                    const subenlaces6 = ['empanadas de espinaca a la crema'];
+                                    const panaderiareal = ['pastas', 'rellenos', 'sin gluten', 'panes planos', 'pastas planas', 'horneados duraderos', 'pan de molde', 'pan sin molde', 'pan de sandwich']
+                                    const panaderiavisible = ['pan de molde', 'pan sin molde', 'pastas', 'pan de sandwich'];
+                                    const empanadasreal = ['empanadas de champiñones', 'empanadas de carne molida', 'empanadas argentinas de carne', 'empanadas de espinaca a la crema'];
+                                    const empanadasvisible = ['empanadas de champiñones', 'empanadas de carne molida', 'empanadas argentinas de carne', 'empanadas de espinaca a la crema'];
+                                    const pasteleriareal = ['donuts', 'tableta de chocolate', 'dulces rellenos', 'productos horneados', 'tarta de chocolate', 'napolitana de chocolate'];
+                                    const pasteleriavisible = ['donuts', 'tableta de chocolate', 'dulces rellenos', 'productos horneados'];
+                                    if (enlaces.includes(texto) || subenlaces1.includes(texto)) {
+                                        if (panaderiavisible.includes(texto) == false && panaderiareal.includes(texto)) {
+                                            txt.style.color='GREEN';
+                                        } else if (pasteleriavisible.includes(texto) == false && pasteleriareal.includes(texto)) {
+                                            txt.style.color='GREEN';
+                                        } else {
+                                            txt.style.color='GREEN';
+                                        }
+
+                                    } else if (subenlaces2.includes(texto)) {
+                                        alert("subenlaces2")
+                                        if (panaderiavisible.includes(texto) == false && panaderiareal.includes(texto)) {
+                                            txt.style.color='GREEN';
+                                        } else if (pasteleriavisible.includes(texto) == false && pasteleriareal.includes(texto)) {
+                                            txt.style.color='GREEN';
+                                        } else {
+                                            txt.style.color='GREEN';
+                                        }
+                                    } else if (subenlaces3.includes(texto)) {
+                                        if (panaderiavisible.includes(texto) == false && panaderiareal.includes(texto)) {
+                                            txt.style.color='GREEN';
+                                        } else if (pasteleriavisible.includes(texto) == false && pasteleriareal.includes(texto)) {
+                                            txt.style.color='GREEN';
+                                        } else {
+                                            txt.style.color='GREEN';
+                                        }
+                                    } else if (subenlaces4.includes(texto)) {
+                                        txt.style.color='GREEN';
+                                    } else if (subenlaces6.includes(texto)) {
+                                        txt.style.color='GREEN';
+                                    } else {
+                                        txt.style.color='RED';
+                                    }
+                                }
+                            });
+                          </script>
                     </li>
 
                 </ul>
@@ -229,10 +288,14 @@
                     -<a href="https://strowblack.github.io/MigasAmigas/#pan%20sin%20molde">Pan sin molde</a><br>
                     -<a href="https://strowblack.github.io/MigasAmigas/#pastas">Pastas</a><br>
                     -<a href="https://strowblack.github.io/MigasAmigas/#pan%20de%20sandwich">Pan de sandwich</a><br>
-                    -<a id="panederiaoculta" href="https://strowblack.github.io/MigasAmigas/#sin%20gluten">Sin gluten</a><br>
-                    -<a id="panederiaoculta1" href="https://strowblack.github.io/MigasAmigas/#panes%20planos">Panes planos/pastas planas</a><br>
+                    -<a id="panederiaoculta" href="https://strowblack.github.io/MigasAmigas/#sin%20gluten">Sin
+                        gluten</a><br>
+                    -<a id="panederiaoculta1" href="https://strowblack.github.io/MigasAmigas/#panes%20planos">Panes
+                        planos/pastas planas</a><br>
                     -<a id="panederiaoculta2" href="https://strowblack.github.io/MigasAmigas/#rellenos">Rellenos</a><br>
-                    -<a id="panederiaoculta3" href="https://strowblack.github.io/MigasAmigas/#horneados%20duraderos">Horneados duraderos</a><br>
+                    -<a id="panederiaoculta3"
+                        href="https://strowblack.github.io/MigasAmigas/#horneados%20duraderos">Horneados
+                        duraderos</a><br>
                     <script>
                         var pan = document.getElementById('panederiaoculta');
                         pan.addEventListener("click", function (evento) {
@@ -240,7 +303,7 @@
                             document.getElementById('botonesprms').style.display = 'none';
                             document.getElementById('botonesproc').style.display = 'block';
                             var redireccion = document.getElementById('url');
-                            redireccion.action= pan.getAttribute("href");
+                            redireccion.action = pan.getAttribute("href");
                         })
                         var pan = document.getElementById('panederiaoculta1');
                         pan.addEventListener("click", function (evento) {
@@ -248,7 +311,7 @@
                             document.getElementById('botonesprms').style.display = 'none';
                             document.getElementById('botonesproc').style.display = 'block';
                             var redireccion = document.getElementById('url');
-                            redireccion.action= pan.getAttribute("href");
+                            redireccion.action = pan.getAttribute("href");
                         })
                         var pan = document.getElementById('panederiaoculta2');
                         pan.addEventListener("click", function (evento) {
@@ -256,7 +319,7 @@
                             document.getElementById('botonesprms').style.display = 'none';
                             document.getElementById('botonesproc').style.display = 'block';
                             var redireccion = document.getElementById('url');
-                            redireccion.action= pan.getAttribute("href");
+                            redireccion.action = pan.getAttribute("href");
                         })
                         var pan = document.getElementById('panederiaoculta3');
                         pan.addEventListener("click", function (evento) {
@@ -264,19 +327,25 @@
                             document.getElementById('botonesprms').style.display = 'none';
                             document.getElementById('botonesproc').style.display = 'block';
                             var redireccion = document.getElementById('url');
-                            redireccion.action= pan.getAttribute("href");
+                            redireccion.action = pan.getAttribute("href");
                         })
                     </script>
                     Empanadas:<br>
-                    -<a href="https://strowblack.github.io/MigasAmigas/#empanadas%20de%20champiñones">Empanadas de champiñones</a><br>
-                    -<a href="https://strowblack.github.io/MigasAmigas/#empanadas%20de%carne%molida">Empanadas de carne molida</a><br>
-                    -<a href="https://strowblack.github.io/MigasAmigas/#empanadas%20argentinas%20de%20carne">Empanadas argentinas de carne</a><br>
-                    -<a href="https://strowblack.github.io/MigasAmigas/#empanadas%20de%20espincaca%20a%20la%20crema">Empanadas de espinaca a la crema</a><br>
+                    -<a href="https://strowblack.github.io/MigasAmigas/#empanadas%20de%20champiñones">Empanadas de
+                        champiñones</a><br>
+                    -<a href="https://strowblack.github.io/MigasAmigas/#empanadas%20de%carne%molida">Empanadas de carne
+                        molida</a><br>
+                    -<a href="https://strowblack.github.io/MigasAmigas/#empanadas%20argentinas%20de%20carne">Empanadas
+                        argentinas de carne</a><br>
+                    -<a href="https://strowblack.github.io/MigasAmigas/#empanadas%20de%20espincaca%20a%20la%20crema">Empanadas
+                        de espinaca a la crema</a><br>
                     Pasteleria:<br>
                     - <a href="https://strowblack.github.io/MigasAmigas/#donuts">Donuts</a><br>
-                    - <a href="https://strowblack.github.io/MigasAmigas/#tableta%20de%20chocolate">Tableta de chocolate</a><br>
+                    - <a href="https://strowblack.github.io/MigasAmigas/#tableta%20de%20chocolate">Tableta de
+                        chocolate</a><br>
                     - <a href="https://strowblack.github.io/MigasAmigas/#dulces%20rellenos">Dulces rellenos</a><br>
-                    - <a href="https://strowblack.github.io/MigasAmigas/#productos%20horneados">Productos horneados</a><br>
+                    - <a href="https://strowblack.github.io/MigasAmigas/#productos%20horneados">Productos
+                        horneados</a><br>
                     - <a id="bolleriaoculta"
                         href="https://strowblack.github.io/MigasAmigas/#tarta%20de%20chocolate">Tarta de
                         chocolate</a><br>
@@ -290,7 +359,7 @@
                             document.getElementById('botonesbm').style.display = 'none';
                             document.getElementById('botonesbo').style.display = 'block';
                             var redireccion = document.getElementById('url');
-                            redireccion.action= bollos.getAttribute("href");
+                            redireccion.action = bollos.getAttribute("href");
                         })
                         var bollos = document.getElementById('bolleriaoculta1');
                         bollos.addEventListener("click", function (evento) {
@@ -298,7 +367,7 @@
                             document.getElementById('botonesbm').style.display = 'none';
                             document.getElementById('botonesbo').style.display = 'block';
                             var redireccion = document.getElementById('url');
-                            redireccion.action= bollos.getAttribute("href");
+                            redireccion.action = bollos.getAttribute("href");
                         })
                     </script>
                 </div>
