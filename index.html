@@ -230,11 +230,35 @@
                     -<a href="https://strowblack.github.io/MigasAmigas/#pastas">Pastas</a><br>
                     -<a href="https://strowblack.github.io/MigasAmigas/#pan%20de%20sandwich">Pan de sandwich</a><br>
                     -<a id="panederiaoculta" href="https://strowblack.github.io/MigasAmigas/#sin%20gluten">Sin gluten</a><br>
-                    -<a id="panederiaoculta" href="https://strowblack.github.io/MigasAmigas/#panes%20planos">Panes planos/pastas planas</a><br>
-                    -<a id="panederiaoculta" href="https://strowblack.github.io/MigasAmigas/#rellenos">Rellenos</a><br>
-                    -<a id="panederiaoculta" href="https://strowblack.github.io/MigasAmigas/#horneados%20duraderos">Horneados duraderos</a><br>
+                    -<a id="panederiaoculta1" href="https://strowblack.github.io/MigasAmigas/#panes%20planos">Panes planos/pastas planas</a><br>
+                    -<a id="panederiaoculta2" href="https://strowblack.github.io/MigasAmigas/#rellenos">Rellenos</a><br>
+                    -<a id="panederiaoculta3" href="https://strowblack.github.io/MigasAmigas/#horneados%20duraderos">Horneados duraderos</a><br>
                     <script>
                         var pan = document.getElementById('panederiaoculta');
+                        pan.addEventListener("click", function (evento) {
+                            document.getElementById('masproductospan').style.display = 'block';
+                            document.getElementById('botonesprms').style.display = 'none';
+                            document.getElementById('botonesproc').style.display = 'block';
+                            var redireccion = document.getElementById('url');
+                            redireccion.action= pan.getAttribute("href");
+                        })
+                        var pan = document.getElementById('panederiaoculta1');
+                        pan.addEventListener("click", function (evento) {
+                            document.getElementById('masproductospan').style.display = 'block';
+                            document.getElementById('botonesprms').style.display = 'none';
+                            document.getElementById('botonesproc').style.display = 'block';
+                            var redireccion = document.getElementById('url');
+                            redireccion.action= pan.getAttribute("href");
+                        })
+                        var pan = document.getElementById('panederiaoculta2');
+                        pan.addEventListener("click", function (evento) {
+                            document.getElementById('masproductospan').style.display = 'block';
+                            document.getElementById('botonesprms').style.display = 'none';
+                            document.getElementById('botonesproc').style.display = 'block';
+                            var redireccion = document.getElementById('url');
+                            redireccion.action= pan.getAttribute("href");
+                        })
+                        var pan = document.getElementById('panederiaoculta3');
                         pan.addEventListener("click", function (evento) {
                             document.getElementById('masproductospan').style.display = 'block';
                             document.getElementById('botonesprms').style.display = 'none';
@@ -256,7 +280,7 @@
                     - <a id="bolleriaoculta"
                         href="https://strowblack.github.io/MigasAmigas/#tarta%20de%20chocolate">Tarta de
                         chocolate</a><br>
-                    - <a id="bolleriaoculta"
+                    - <a id="bolleriaoculta1"
                         href="https://strowblack.github.io/MigasAmigas/#napolitana%20de%20chocolate">Napolitana de
                         chocolate</a><br>
                     <script>
@@ -268,7 +292,14 @@
                             var redireccion = document.getElementById('url');
                             redireccion.action= bollos.getAttribute("href");
                         })
-
+                        var bollos = document.getElementById('bolleriaoculta1');
+                        bollos.addEventListener("click", function (evento) {
+                            document.getElementById('masproductosbollo').style.display = 'block';
+                            document.getElementById('botonesbm').style.display = 'none';
+                            document.getElementById('botonesbo').style.display = 'block';
+                            var redireccion = document.getElementById('url');
+                            redireccion.action= bollos.getAttribute("href");
+                        })
                     </script>
                 </div>
             </div>
