@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="css/style.css">
     <link href='http://fonts.googleapis.com/css?family=Coming+Soon' rel='stylesheet' type='text/css' />
     <title>MIGASAMIGAS</title>
-    <link rel="icon" type="image/jpg" href="img/logo.jpg"/>
+    <link rel="icon" type="image/jpg" href="img/logo.jpg" />
     <!-- Hola Paquito <3 -->
 </head>
 <a name="home"></a>
@@ -17,7 +17,7 @@
     <div id="main_wraper">
         <header>
             <div id="main_tittle" class="float-left correct">
-                <img src="img/logo.jpg" alt="a" class="logopr">
+                <img src="img/logo.jpg" alt="a" class="logopr" onclick="window.lista.showModal();">
             </div>
             <nav class="float-left posct">
                 <ul>
@@ -42,10 +42,10 @@
                             boton.addEventListener("click", function (evento) {
                                 var texto = document.getElementById('textbusc').value;
                                 const enlaces = ['panaderia', 'pasteleria', 'empanadas'];
-                                const subenlaces1 = ['pastas', 'rellenos','donuts'];
-                                const subenlaces2 = ['sin gluten', 'panes planos', 'pastas planas', 'horneados duraderos','dulces rellenos', 'productos horneados'];
-                                const subenlaces3 = ['pan de molde', 'pan sin molde', 'pan de sandwich','empanadas de champiñones','tableta de chocolate','tarta de chocolate','napolitana de chocolate'];
-                                const subenlaces4 = ['empanadas argentinas de carne','empanadas de carne molida'];
+                                const subenlaces1 = ['pastas', 'rellenos', 'donuts'];
+                                const subenlaces2 = ['sin gluten', 'panes planos', 'pastas planas', 'horneados duraderos', 'dulces rellenos', 'productos horneados'];
+                                const subenlaces3 = ['pan de molde', 'pan sin molde', 'pan de sandwich', 'empanadas de champiñones', 'tableta de chocolate', 'tarta de chocolate', 'napolitana de chocolate'];
+                                const subenlaces4 = ['empanadas argentinas de carne', 'empanadas de carne molida'];
                                 const subenlaces6 = ['empanadas de espinaca a la crema'];
                                 const panaderiareal = ['pastas', 'rellenos', 'sin gluten', 'panes planos', 'pastas planas', 'horneados duraderos', 'pan de molde', 'pan sin molde', 'pan de sandwich']
                                 const panaderiavisible = ['pan de molde', 'pan sin molde', 'pastas', 'pan de sandwich'];
@@ -203,29 +203,7 @@
                                     template += texto6;
                                     redireccion.action = template;
                                 } else {
-                                    alert(`No tenemos "${texto}" pero disponemos:
-        panaderia:
-            -pan de molde
-            -pan sin molde
-            -pastas
-            -pan de sandwich
-            -sin gluten
-            -panes planos/pastas planas
-            -rellenos
-            -horneados duraderos
-        empanadas:
-            -empanadas de champiñones
-            -empanadas de carne molida
-            -empanadas argentinas de carne
-            -empanadas de espinaca a la crema
-        pasteleria:
-            -donuts
-            -tableta de chocolate
-            -dulces rellenos
-            -productos horneados
-            -tarta de chocolate
-            -napolitana de chocolate
-                                    `);
+                                    alert("Producto no encotrado, toca nuestro logo para mirar nuestros productos.")
                                 }
                             })
                         </script>
@@ -241,19 +219,74 @@
             <div class="cb"></div>
         </header>
 
+        <dialog id="lista">
+            <img id="xmodal" onclick="window.lista.close();" src="img/equisd.png" alt="a" class="float-right">
+            <div>
+                <div id="textmodal">
+                    Disponemos: <br>
+                    Panaderia: <br>
+                    -<a href="https://strowblack.github.io/MigasAmigas/#pan%20de%20molde">Pan de molde</a><br>
+                    -<a href="https://strowblack.github.io/MigasAmigas/#pan%20sin%20molde">Pan sin molde</a><br>
+                    -<a href="https://strowblack.github.io/MigasAmigas/#pastas">Pastas</a><br>
+                    -<a href="https://strowblack.github.io/MigasAmigas/#pan%20de%20sandwich">Pan de sandwich</a><br>
+                    -<a id="panederiaoculta" href="https://strowblack.github.io/MigasAmigas/#sin%20gluten">Sin gluten</a><br>
+                    -<a id="panederiaoculta" href="https://strowblack.github.io/MigasAmigas/#panes%20planos">Panes planos/pastas planas</a><br>
+                    -<a id="panederiaoculta" href="https://strowblack.github.io/MigasAmigas/#rellenos">Rellenos</a><br>
+                    -<a id="panederiaoculta" href="https://strowblack.github.io/MigasAmigas/#horneados%20duraderos">Horneados duraderos</a><br>
+                    <script>
+                        var pan = document.getElementById('panederiaoculta');
+                        pan.addEventListener("click", function (evento) {
+                            document.getElementById('masproductospan').style.display = 'block';
+                            document.getElementById('botonesprms').style.display = 'none';
+                            document.getElementById('botonesproc').style.display = 'block';
+                        })
+                    </script>
+                    Empanadas:<br>
+                    -<a href="https://strowblack.github.io/MigasAmigas/#empanadas%20de%20champiñones">Empanadas de champiñones</a><br>
+                    -<a href="https://strowblack.github.io/MigasAmigas/#empanadas%20de%carne%molida">Empanadas de carne molida</a><br>
+                    -<a href="https://strowblack.github.io/MigasAmigas/#empanadas%20argentinas%20de%20carne">Empanadas argentinas de carne</a><br>
+                    -<a href="https://strowblack.github.io/MigasAmigas/#empanadas%20de%20espincaca%20a%20la%20crema">Empanadas de espinaca a la crema</a><br>
+                    Pasteleria:<br>
+                    - <a href="https://strowblack.github.io/MigasAmigas/#donuts">Donuts</a><br>
+                    - <a href="https://strowblack.github.io/MigasAmigas/#tableta%20de%20chocolate">Tableta de chocolate</a><br>
+                    - <a href="https://strowblack.github.io/MigasAmigas/#dulces%20rellenos">Dulces rellenos</a><br>
+                    - <a href="https://strowblack.github.io/MigasAmigas/#productos%20horneados">Productos horneados</a><br>
+                    - <a id="bolleriaoculta"
+                        href="https://strowblack.github.io/MigasAmigas/#tarta%20de%20chocolate">Tarta de
+                        chocolate</a><br>
+                    - <a id="bolleriaoculta"
+                        href="https://strowblack.github.io/MigasAmigas/#napolitana%20de%20chocolate">Napolitana de
+                        chocolate</a><br>
+                    <script>
+                        var bollos = document.getElementById('bolleriaoculta');
+                        bollos.addEventListener("click", function (evento) {
+                            document.getElementById('masproductosbollo').style.display = 'block';
+                            document.getElementById('botonesbm').style.display = 'none';
+                            document.getElementById('botonesbo').style.display = 'block';
+                        })
+
+                    </script>
+                </div>
+            </div>
+            <div class="cb"></div>
+
+        </dialog>
 
         <dialog id="modal">
             <div id="headmodal">
                 <img id="logomodal" src="img/logo.jpg" alt="a" class="float-left">
                 <div id="cft" class="float-left">
                     <div>
-                        <div class="float-left"><img class="logomd" src="img/correo.jpg" alt="a"><strong class="sp">MigasAmigas@gmail.com</strong></div>
-                        <div class="float-right sp3"><img class="logomd" src="img/tweet.jpg" alt="a"><strong class="sp">@_.MigasAmigas._</strong></div>
+                        <div class="float-left"><img class="logomd" src="img/correo.jpg" alt="a"><strong
+                                class="sp">MigasAmigas@gmail.com</strong></div>
+                        <div class="float-right sp3"><img class="logomd" src="img/tweet.jpg" alt="a"><strong
+                                class="sp">@_.MigasAmigas._</strong></div>
                     </div>
-                    <div class="float-left st2"><img class="logomd" src="img/face.jpg" alt="a"><strong class="sp">facebook.com/MigasAmigas</strong></div>
+                    <div class="float-left st2"><img class="logomd" src="img/face.jpg" alt="a"><strong
+                            class="sp">facebook.com/MigasAmigas</strong></div>
                 </div>
                 <img id="xmodal" onclick="window.modal.close();" src="img/equisd.png" alt="a" class="float-right">
-                
+
             </div>
             <div>
                 <div id="textmodal">
@@ -274,7 +307,7 @@
                 </div>
             </div>
             <div class="cb"></div>
-            
+
         </dialog>
 
 

@@ -315,7 +315,11 @@ header nav ul li ul li:hover {
 dialog::backdrop {
     background: rgba(0, 0, 0, 0.502);
 }
-
+#lista{
+    width: 650px;
+    height: 475px;
+    background-color: #949B9A;
+}
 #modal{
     width: 900px;
     height: 525px;
